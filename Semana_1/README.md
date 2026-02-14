@@ -8,5 +8,5 @@ Este ejercicio refuerza:
 - Tipos de datos en JavaScript
 - Uso de `console.log()`, `alert()`, `prompt()` y `console.error()`
 - Condicionales (`if`, `else if`, `else`)
-- Buenas prácticas en el nombrado de variables (camelCase, descriptivas)
+- Buenas prácticas en el nombrado de variables (camelCase, descriptivas).
 

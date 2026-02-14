@@ -7,7 +7,6 @@ const productos = [
     { id: 5, nombre: "Auriculares Bluetooth", precio: 300 }
 ];
 
-
 //for... in
 
 for (const producto of productos) {

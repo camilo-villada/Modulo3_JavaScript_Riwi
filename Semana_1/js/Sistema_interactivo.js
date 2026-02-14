@@ -4,6 +4,7 @@
 const userName = prompt("¿Cuál es tu nombre?: ");
 const ageInput = prompt("¿Cuál es tu edad?: ");
 
+
 // Convertimos la entrada de edad a número usando Number().
 // Luego comprobamos si es un número válido con isNaN().
 const ageUser = Number(ageInput);

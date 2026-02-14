@@ -6,6 +6,7 @@
 // ================================
 // ELEMENTOS DEL DOM
 // ================================
+
 const form = document.getElementById('productForm');
 const nameInput = document.getElementById('name');
 const priceInput = document.getElementById('price');

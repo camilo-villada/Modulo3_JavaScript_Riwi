@@ -3,6 +3,7 @@
 // ===============================
 // Selección de elementos del DOM
 // ===============================
+
 const inputNota = document.getElementById("inputNota");
 const btnAgregar = document.querySelector("#btnAgregar");
 const listaNotas = document.getElementById("listaNotas");

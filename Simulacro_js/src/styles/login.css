@@ -1,0 +1,419 @@
+/* ==================== ESTILOS GENERALES ==================== */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f6f6f8 0%, #ffffff 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* ==================== CONTENEDOR PRINCIPAL DEL LOGIN ==================== */
+/* Contenedor principal que envuelve toda la página de login */
+.login {
+    max-width: 440px;                  /* Limita el ancho máximo a 440px */
+    width: 100%;                       /* Ancho responsivo */
+    margin: 0 auto;                    /* Centra horizontalmente */
+    background-color: #ffffff;         /* Fondo blanco en modo claro */
+    border-radius: 1.5rem;             /* Bordes redondeados de 24px */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04); /* Sombra suave para dar profundidad */
+    overflow: hidden;                  /* Asegura que el contenido respeta los bordes redondeados */
+    font-family: 'Inter', sans-serif;  /* Tipografía principal */
+    color: #0d121b;                    /* Color de texto base */
+}
+
+/* ==================== ENCABEZADO ==================== */
+/* Encabezado con logo, título y subtítulo */
+.login_header {
+    text-align: center;                /* Centra todo el contenido */
+    padding: 2.5rem 2rem 0.5rem;       /* Espaciado: arriba, lateral, abajo */
+}
+
+/* Figura contenedora del logo/ícono */
+.login_logo {
+    width: 48px;                       /* Ancho del logo */
+    height: 48px;                      /* Alto del logo */
+    margin: 0 auto 1rem;               /* Centrado y espacio debajo */             
+    display: flex;                     /* Flex para centrar el ícono */
+    align-items: center;               /* Centra verticalmente */
+    justify-content: center;           /* Centra horizontalmente */
+    background: linear-gradient(135deg, #1152d4 0%, #2563eb 100%); /* Gradiente azul */
+    border-radius: 0.75rem;            /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(17, 82, 212, 0.2); /* Sombra azul suave */
+}
+
+/* Imagen del logo */
+.login_logo-img {
+    height: 1.75rem;                   /* Alto de la imagen */
+    width: 1.75rem;                    /* Ancho de la imagen */
+}
+
+/* Título principal */
+.login_title {
+    font-size: 28px;                   /* Tamaño grande */
+    font-weight: 700;                  /* Peso bold */
+    margin: 0;                         /* Quita márgenes por defecto */
+    color: #0d121b;                    /* Color oscuro */
+    letter-spacing: -0.5px;            /* Espaciado entre letras */
+}
+
+/* Subtítulo/Mensaje de bienvenida */
+.login_subtitle {
+    font-size: 14px;                   /* Texto pequeño */
+    font-weight: 400;                  /* Peso normal */
+    color: #4c669a;                    /* Texto secundario */
+    margin-top: 0.5rem;                /* Espacio arriba */
+    margin-bottom: 0;                  /* Sin margen abajo */
+}
+
+/* ==================== FORMULARIO ==================== */
+/* Contenedor del formulario */
+.login_form {
+    display: flex;                     /* Flex para organizar los elementos */
+    flex-direction: column;            /* Apila los elementos verticalmente */
+    gap: 0;                            /* Sin espacio entre elementos del fieldset y secciones */
+    padding: 0;                        /* Sin padding del formulario */
+    margin: 0;                         /* Sin margin */
+}
+
+/* ==================== FIELDSET DE SELECCIÓN DE ROL ==================== */
+/* Grupo de selección: Visitor o Administrator */
+.login_fieldset {
+    border: none;                      /* Sin borde */
+    padding: 0.375rem;                 /* Padding interno pequeño entre botones */
+    margin: 1.5rem 2rem;               /* Margen: lateral 2rem, vertical 1.5rem */
+    display: flex;                     /* Flex para organizar elementos */
+    gap: 0;                            /* Sin espacio entre elementos */
+    background-color: #f1f3f7;         /* Fondo gris claro */
+    border-radius: 0.75rem;            /* Bordes redondeados */
+    height: 3rem;                      /* Altura de 48px */
+}
+
+/* Etiqueta del fieldset (Account type) */
+.login form legend {
+    display: none;                     /* Oculta la leyenda visual */
+    padding: 0;                        /* Sin padding */
+    margin: 0;                         /* Sin margen */
+}
+
+/* Contenedor visual de opciones de rol */
+.login_role-label {
+    display: flex;                     /* Flex para organizar elementos */
+    align-items: center;               /* Centra verticalmente */
+    justify-content: center;           /* Centra horizontalmente */
+    flex: 1;                           /* Ocupa espacio disponible equitativamente */
+    padding: 0.5rem;                   /* Espaciado interno pequeño */
+    background-color: transparent;     /* Fondo transparente inicialmente */
+    border-radius: 0.5rem;             /* Bordes redondeados */
+    cursor: pointer;                   /* Cursor de mano */
+    font-size: 14px;                   /* Tamaño de texto */
+    font-weight: 600;                  /* Peso semibold */
+    color: #4c669a;                    /* Color gris-azul */
+    transition: all 0.2s ease;         /* Transición suave */
+    margin: 0;                         /* Sin margen */
+    gap: 0.5rem;                       /* Espacio entre input y texto */
+}
+
+/* Radio button estilizado */
+.login_radio {
+    appearance: none;                  /* Quita el estilo por defecto */
+    -webkit-appearance: none;          /* Para Safari */
+    width: 0;                          /* Sin width */
+    height: 0;                         /* Sin height */
+    margin: 0;                         /* Sin margen */
+    padding: 0;                        /* Sin padding */
+    opacity: 0;                        /* Invisible */
+    cursor: pointer;                   /* Cursor de mano */
+    position: absolute;                /* Posicionamiento absoluto */
+}
+
+/* Estilo cuando el radio está seleccionado */
+.login_radio:checked + .login_role-label,
+.login_role-label:has(.login_radio:checked) {
+    background-color: #ffffff;         /* Fondo blanco */
+    color: #0d121b;                    /* Texto oscuro */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Sombra sutil */
+}
+
+/* Hover en las opciones de rol */
+.login_role-label:hover {
+    transform: translateY(-1px);       /* Sube ligeramente */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra más visible */
+}
+
+/* ==================== SECCIONES DE FORMULARIO ==================== */
+/* Contenedor de secciones (email, password, opciones) */
+.login_section {
+    display: flex;                     /* Flex para organizar elementos */
+    flex-direction: column;            /* Apila verticalmente */
+    gap: 0.5rem;                       /* Espacio entre label e input */
+    padding: 1.25rem 2rem;             /* Espaciado interno */
+    margin: 0;                         /* Sin margen */
+    border: none;                      /* Sin borde */
+}
+
+/* Última sección - opciones adicionales */
+.login_section-options {
+    display: flex;                     /* Flex */
+    flex-direction: row;               /* Organiza horizontalmente */
+    justify-content: space-between;    /* Espacio entre elementos */
+    align-items: center;               /* Centra verticalmente */
+    padding-top: 0.5rem;               /* Reduce padding arriba */
+}
+
+/* ==================== ETIQUETAS ==================== */
+/* Etiqueta de formulario (Email, Password) */
+.login_label {
+    font-size: 14px;                   /* Tamaño pequeño */
+    font-weight: 500;                  /* Peso medio */
+    color: #0d121b;                    /* Color oscuro */
+    margin-bottom: 0;                  /* Sin margen abajo */
+}
+
+/* Etiquetas de checkbox */
+.login_checkbox-label {
+    display: flex;                     /* Flex para organizar */
+    align-items: center;               /* Centra verticalmente */
+    gap: 0.5rem;                       /* Espacio entre checkbox y texto */
+    font-size: 12px;                   /* Texto pequeño */
+    font-weight: 500;                  /* Peso medio */
+    color: #4c669a;                    /* Color secundario */
+    cursor: pointer;                   /* Cursor de mano */
+    margin: 0;                         /* Sin margen */
+}
+
+/* ==================== INPUTS ==================== */
+/* Estilos generales de inputs */
+.login_input {
+    width: 100%;                       /* Ancho completo */
+    padding: 0.75rem 1rem;             /* Espaciado interno */
+    font-size: 16px;                   /* Tamaño de texto */
+    font-family: 'Inter', sans-serif;  /* Tipografía */
+    border: 1px solid #cfd7e7;         /* Borde gris */
+    border-radius: 0.75rem;            /* Bordes redondeados */
+    background-color: #ffffff;         /* Fondo blanco */
+    color: #0d121b;                    /* Texto oscuro */
+    transition: all 0.2s ease;         /* Transición suave */
+    box-sizing: border-box;            /* Incluye padding en el ancho */
+}
+
+/* Focus en inputs */
+.login_input:focus {
+    outline: none;                     /* Sin outline */
+    border-color: #1152d4;             /* Borde azul */
+    box-shadow: 0 0 0 3px rgba(17, 82, 212, 0.1); /* Sombra azul suave */
+}
+
+/* Placeholder */
+.login_input::placeholder {
+    color: #9ca3af;                    /* Texto gris claro */
+}
+
+/* ==================== CHECKBOX ==================== */
+/* Checkbox personalizado */
+.login_checkbox {
+    appearance: none;                  /* Quita el estilo por defecto */
+    -webkit-appearance: none;          /* Para Safari */
+    width: 1rem;                       /* Ancho */
+    height: 1rem;                      /* Alto */
+    border: 1px solid #d1d5db;         /* Borde gris */
+    border-radius: 0.25rem;            /* Bordes ligeramente redondeados */
+    background-color: #ffffff;         /* Fondo blanco */
+    cursor: pointer;                   /* Cursor de mano */
+    transition: all 0.2s ease;         /* Transición suave */
+    margin: 0;                         /* Sin margen */
+    flex-shrink: 0;                    /* No se comprime */
+}
+
+/* Checkbox cuando está marcado */
+.login_checkbox:checked {
+    background-color: #1152d4;         /* Fondo azul */
+    border-color: #1152d4;             /* Borde azul */
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e"); /* Checkmark SVG */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* Checkbox focus */
+.login_checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(17, 82, 212, 0.1);
+}
+
+/* ==================== ENLACES ==================== */
+/* Enlaces de "Forgot password?" y "Sign up" */
+.login_link {
+    font-size: 12px;                   /* Texto pequeño */
+    font-weight: 600;                  /* Peso semibold */
+    color: #1152d4;                    /* Azul primario */
+    text-decoration: none;             /* Sin subrayado */
+    transition: all 0.2s ease;         /* Transición suave */
+    cursor: pointer;                   /* Cursor de mano */
+}
+
+/* Hover en enlaces */
+.login_link:hover {
+    color: #1d4ed8;                    /* Azul más oscuro */
+    text-decoration: underline;        /* Subrayado */
+}
+
+/* ==================== BOTÓN ==================== */
+/* Botón de envío */
+.login_button {
+    width: calc(100% - 2.5rem);        /* Ancho completo menos padding lateral */
+    padding: 0.75rem 1.25rem;          /* Espaciado interno */
+    margin: 0.5rem 1.25rem 0;          /* Margen: lateral 1.25rem, arriba 0.5rem */
+    font-size: 16px;                   /* Tamaño grande */
+    font-weight: 700;                  /* Peso bold */
+    color: #ffffff;                    /* Texto blanco */
+    background-color: #1152d4;         /* Fondo azul */
+    border: none;                      /* Sin borde */
+    border-radius: 0.75rem;            /* Bordes redondeados */
+    cursor: pointer;                   /* Cursor de mano */
+    transition: all 0.2s ease;         /* Transición suave */
+    box-shadow: 0 4px 12px rgba(17, 82, 212, 0.2); /* Sombra azul */
+    font-family: 'Inter', sans-serif;  /* Tipografía */
+    letter-spacing: 0.015em;           /* Espaciado entre letras */
+}
+
+/* Hover en botón */
+.login_button:hover {
+    background-color: #1d4ed8;         /* Azul más oscuro */
+    box-shadow: 0 6px 16px rgba(17, 82, 212, 0.3); /* Sombra más pronunciada */
+}
+
+/* Active en botón */
+.login_button:active {
+    transform: scale(0.98);            /* Escala reducida */
+}
+
+/* ==================== NAVEGACIÓN DE AUTENTICACIÓN ==================== */
+/* Navegación de links (Sign up) */
+.login_nav {
+    padding: 1.5rem 2rem 2rem;         /* Espaciado interno */
+    text-align: center;                /* Centra el contenido */
+}
+
+/* Párrafo de navegación */
+.login_nav-text {
+    font-size: 14px;                   /* Tamaño pequeño */
+    color: #4c669a;                    /* Color secundario */
+    margin: 0;                         /* Sin margen */
+}
+
+/* ==================== FOOTER ==================== */
+/* Pie de página */
+.login_footer {
+    text-align: center;                /* Centra el contenido */
+    padding: 0 2rem 2rem;              /* Espaciado interno */
+    border-top: 1px solid #f0f0f0;     /* Borde superior sutil */
+}
+
+/* Texto del copyright */
+.login_copyright {
+    font-size: 12px;                   /* Texto pequeño */
+    color: #9ca3af;                    /* Gris claro */
+    margin: 0;                         /* Sin margen */
+}
+.class_app{
+        width: 100%;
+        height: 100%;
+}
+
+/* New design overrides for card-based login layout */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background: #ffffff;
+    width: 380px;
+    padding: 2.2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    background: #d1fae5;
+    color: #16a34a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 1.8rem;
+}
+
+.field {
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+.field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    background: #fff;
+}
+
+.input-group input,
+.input-group select {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.9rem;
+    background: transparent;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.8rem;
+    background: #22c55e;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn:hover { background: #16a34a; }
+
+.footer-text { margin-top: 1.4rem; font-size: 0.85rem; color: #6b7280; }
+
+/* small copyright override */
+small { margin-top: 1rem; font-size: 0.75rem; color: #9ca3af; }
+
+
+
+

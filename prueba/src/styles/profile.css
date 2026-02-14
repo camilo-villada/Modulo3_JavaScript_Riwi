@@ -1,0 +1,271 @@
+/**
+ * Profile View Styles - CRUDZASO Application
+ * Pixel Perfect Design matching the provided mockup
+ */
+
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ========== SIDEBAR USER (Bottom) ========== */
+.sidebar-user {
+    margin-top: auto;
+    padding: 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sidebar-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.sidebar-user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.sidebar-user-role {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* ========== PROFILE PAGE HEADER ========== */
+.profile-page-header {
+    margin-bottom: 32px;
+}
+
+.profile-page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+/* ========== PROFILE CONTENT GRID ========== */
+.profile-content-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* ========== LEFT CARD - Profile Card ========== */
+.profile-card-left {
+    background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 32px;
+    text-align: center;
+}
+
+.profile-photo-section {
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 4px solid white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name-section {
+    margin-bottom: 20px;
+}
+
+.profile-name-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 12px 0;
+}
+
+.profile-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #1e3a5f;
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profile-email-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.email-icon {
+    width: 18px;
+    height: 18px;
+    stroke: #64748b;
+}
+
+.profile-email-section span {
+    font-size: 14px;
+    color: #475569;
+}
+
+.profile-tasks-count {
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.tasks-number {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.tasks-label {
+    display: block;
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* ========== RIGHT CARD - Personal Information ========== */
+.profile-card-right {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 32px;
+}
+
+.personal-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.personal-info-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.btn-edit-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-edit-profile:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.btn-edit-profile svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Personal Info Grid */
+.personal-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 40px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #94a3b8;
+}
+
+.info-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.info-value-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #fef3c7;
+    color: #d97706;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    .profile-content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-card-left {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-card-left,
+    .profile-card-right {
+        padding: 24px;
+    }
+    
+    .personal-info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .personal-info-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+}

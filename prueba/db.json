@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin User",
+      "email": "admin@crudzaso.com",
+      "password": "admin123",
+      "role": "admin",
+      "createdAt": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "a468",
+      "name": "juan",
+      "email": "juan@test.com",
+      "password": "123456",
+      "role": "user",
+      "createdAt": "2026-02-02T14:36:27.841Z"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "dafdsdfsdfsfsadasdasd",
+      "description": "da",
+      "status": "completed",
+      "priority": "medium",
+      "category": "general",
+      "dueDate": "2026-02-06",
+      "userId": "a468",
+      "userName": "juan",
+      "createdAt": "2026-02-04T15:51:10.321Z",
+      "id": 1,
+      "assignedBy": "Admin User"
+    }
+  ]
+}
